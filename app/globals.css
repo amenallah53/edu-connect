@@ -1,26 +1,111 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  /* Base radii */
+  --radius: 0.5rem;
+
+  /* Base colors */
+  --background: oklch(98.894% 0.00531 16.082); /* main background color */
+  --foreground: oklch(0.15 0 0); /* main foreground color, mainly used for big text (titles) */
+
+  /* Primary color */
+  --primary: linear-gradient( /* used for gradient components which have a big presence */
+    to right,
+    oklch(0.65 0.28 325),
+    oklch(0.67 0.28 352)
+  );  
+  --primary-foreground: oklch(0.98 0 0); /* text color for the components */
+
+  /* Secondary color */
+  --secondary: oklch(1 0 0); /* will be used for footer, it makes a contrast with the primary theme palette */
+  --secondary-foreground: oklch(0.22 0.1 260); /* text color for footer */
+
+  /* Muted (gray/neutral) */
+  --muted: oklch(0.5 0 0); /* will be used for border colors, surface colors */
+  --muted-foreground: oklch(0.5 0 0); /* will be used for smaller texts */
+
+  /* Border + Input */
+  --border: oklch(0.9 0 0);
+  --input: oklch(0.9 0 0);
+
+  /* Ring (focus outline) */
+  --ring: oklch(0.6 0 0);
+
+  /* Destructive (errors) */
+  --destructive: oklch(0.55 0.2 25);
+  --destructive-foreground: oklch(0.98 0 0);
+
+  /* Card / UI surfaces */
+  --card: var(--background);
+  --card-foreground: var(--foreground);
+}
+
+.dark {
+  --background: oklch(0.1 0 0);
+  --foreground: oklch(0.98 0 0);
+
+  --primary: oklch(0.8 0.1 260);
+  --primary-foreground: oklch(0.1 0 0);
+
+  --secondary: oklch(0.25 0 0);
+  --secondary-foreground: oklch(0.98 0 0);
+
+  --muted: oklch(0.2 0 0);
+  --muted-foreground: oklch(0.7 0 0);
+
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.5 0 0);
+
+  --destructive: oklch(0.7 0.2 25);
+  --destructive-foreground: oklch(0.98 0 0);
+
+  --card: oklch(0.15 0 0);
+  --card-foreground: oklch(0.98 0 0);
+}
+
+/* for gradient bg to work */
+.my-gradient {
+  background: var(--primary); /* this works! */
+}
+.my-gradient-text {
+  background: var(--primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  body {
+    @apply bg-background text-foreground;
+  }
 }
