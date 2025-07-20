@@ -43,8 +43,8 @@
   --primary-foreground: oklch(0.98 0 0); /* text color for the components */
 
   /* Secondary color */
-  --secondary: oklch(1 0 0); /* will be used for footer, it makes a contrast with the primary theme palette */
-  --secondary-foreground: oklch(0.22 0.1 260); /* text color for footer */
+  --secondary-foreground: oklch(0.80 0.00115 200); /* will be used for footer, it makes a contrast with the primary theme palette */
+  --secondary: oklch(0.18 0.077 260); /* text color for footer */
 
   /* Muted (gray/neutral) */
   --muted: oklch(0.5 0 0); /* will be used for border colors, surface colors */
@@ -64,6 +64,11 @@
   /* Card / UI surfaces */
   --card: var(--background);
   --card-foreground: var(--foreground);
+
+  /* Other Colors */
+  --purple-color: oklch(0.65 0.28 325);
+  --pinky-color: oklch(0.67 0.28 352);
+  --blue-color: oklch(0.18 0.077 260);
 }
 
 .dark {
@@ -88,6 +93,11 @@
 
   --card: oklch(0.15 0 0);
   --card-foreground: oklch(0.98 0 0);
+
+  /* Other Colors */
+  --purple-color: oklch(0.65 0.28 325);
+  --pinky-color: oklch(0.67 0.28 352);
+  --blue-color: oklch(50.669% 0.27678 263.688);
 }
 
 /* for gradient bg to work */
