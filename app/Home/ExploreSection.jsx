@@ -26,7 +26,7 @@ export default function ExploreSection() {
           <b className="text-[var(--pinky-color)]">89k+</b> Students
         </small>
         <small>
-          <b className="text-[var(--blue-color)]">15k+</b> Resources
+          <b className="text-[var(--blue-marine-color)]">15k+</b> Resources
         </small>
       </div>
 

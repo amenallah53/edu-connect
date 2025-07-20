@@ -45,7 +45,8 @@ export default function Navbar() {
                     </Button>
                     <Button
                         className="my-gradient w-[80px] md:w-[100px] transition-transform duration-300 
-                        hover:-translate-y-1 hover:shadow-[0_1px_2px_0_var(--color-border)] hover:cursor-pointer">
+                        hover:-translate-y-1 hover:shadow-[0_1px_2px_0_var(--color-border)] hover:cursor-pointer
+                        active:translate-y-1">
                         Join Free
                     </Button>
                 </div>
