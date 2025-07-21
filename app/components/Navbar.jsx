@@ -39,14 +39,14 @@ export default function Navbar() {
                 <div className="flex gap-2 items-center shrink-0">
                     <Button
                         className="w-[80px] md:w-[100px] text-[var(--color-foreground)] 
-                        hover:shadow-[0_1px_2px_0_var(--color-border)] hover:cursor-pointer"
+                        hover:shadow-md hover:cursor-pointer"
                         variant="ghost">
                         Sign In
                     </Button>
                     <Button
                         className="my-gradient w-[80px] md:w-[100px] transition-transform duration-300 
-                        hover:-translate-y-1 hover:shadow-[0_1px_2px_0_var(--color-border)] hover:cursor-pointer
-                        active:translate-y-1">
+                        hover:-translate-y-[2px] hover:shadow-md hover:cursor-pointer
+                        active:translate-y-[2px]">
                         Join Free
                     </Button>
                 </div>
