@@ -1,5 +1,5 @@
 import React from 'react'
-import CategoryCard from '../components/CategoryCard'
+import CategoryCard from '../components/Cards/CategoryCard'
 
 /* icon images imports */
 import BookImg from '../assets/images/book.png'

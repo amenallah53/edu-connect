@@ -1,11 +1,12 @@
 import React from 'react'
 import { Button } from '@/components/ui/button'
-import FeaturedSchoolsCard from '../components/FeaturedSchoolsCard'
+import FeaturedSchoolsCard from '../components/Cards/FeaturedSchoolsCard'
 
 // List of schools
 const featuredSchoolsList = [
   {
     schoolName: 'Riverside High',
+    schoolImg: '/images/riverside-high-school.jpg',
     typeSchool: 'High School',
     location: 'Riverside, CA',
     numberStudents: '2,340',
@@ -15,6 +16,7 @@ const featuredSchoolsList = [
   },
   {
     schoolName: 'MIT',
+    schoolImg: '',
     typeSchool: 'Institute',
     location: 'Cambridge, MA',
     numberStudents: '11,934',
@@ -24,6 +26,7 @@ const featuredSchoolsList = [
   },
   {
     schoolName: 'Art Institute of Chicago',
+    schoolImg: '',
     typeSchool: 'Art School',
     location: 'Chicago, IL',
     numberStudents: '3,456',
@@ -33,6 +36,7 @@ const featuredSchoolsList = [
   },
   {
     schoolName: 'Stanford University',
+    schoolImg: '/images/stanford-university.webp',
     typeSchool: 'University',
     location: 'Stanford, CA',
     numberStudents: '17,249',
@@ -64,6 +68,7 @@ export default function FeaturedSchools() {
           <FeaturedSchoolsCard
             key={index}
             schoolName={school.schoolName}
+            schoolImg={school.schoolImg}
             typeSchool={school.typeSchool}
             location={school.location}
             numberStudents={school.numberStudents}

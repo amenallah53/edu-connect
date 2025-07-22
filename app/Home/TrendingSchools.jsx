@@ -1,11 +1,12 @@
 import React from 'react'
-import TrendingSchoolsCard from '../components/TrendingSchoolsCard';
+import TrendingSchoolsCard from '../components/Cards/TrendingSchoolsCard';
 
 export default function TrendingSchools() {
   // List of schools
 const trendingSchoolsList = [
   {
     schoolName: 'Berkeley',
+    schoolImg: '/images/ca-berkeley-university.jpg',
     location: 'Berkeley, CA',
     numberStudents: '45057',
     rating: '4.7',
@@ -13,6 +14,7 @@ const trendingSchoolsList = [
   },
   {
     schoolName: 'NYU',
+    schoolImg: '',
     location: 'New York, NY',
     numberStudents: '51848',
     rating: '4.6',
@@ -20,6 +22,7 @@ const trendingSchoolsList = [
   },
   {
     schoolName: 'UCLA',
+    schoolImg: '',
     location: 'Los Angeles, CA',
     numberStudents: '47518',
     rating: '4.8',
@@ -41,6 +44,7 @@ const trendingSchoolsList = [
                   <TrendingSchoolsCard
                     key={index}
                     schoolName={school.schoolName}
+                    schoolImg={school.schoolImg}
                     location={school.location}
                     numberStudents={school.numberStudents}
                     rating={school.rating}

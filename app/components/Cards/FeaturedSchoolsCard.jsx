@@ -1,27 +1,38 @@
-import React from 'react'
+'use client'
+import React, { useState } from 'react'
 import {MapPin, Users, Star, Heart, TrendingUp } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
-export default function FeaturedSchoolsCard({schoolName,typeSchool,location,numberStudents,
+export default function FeaturedSchoolsCard({schoolName,schoolImg,typeSchool,location,numberStudents,
     rating,specialities,isTrending}) {
+    const [isLiked,setIsLiked] = useState(false)
     return (
         <div className='flex flex-col rounded-lg transition-all 0.5s ease-in
             hover:shadow-md hover:border-[var(--color-muted)] hover:scale-[1.02]'>
-            <div className='bg-[var(--purple-color)] h-[175px] rounded-t-lg p-4 flex items-start justify-between'>
-                {isTrending ? (
-                    <>
-                        <div className='flex items-center gap-1 bg-[var(--orange-color)] text-white px-3 py-1 rounded-xl'>
-                            <TrendingUp className='w-4 h-4' />
-                            <h3 className='text-xs font-semibold'>Trending</h3>
-                        </div>
-                        <Heart className='text-white w-4 h-4 cursor-pointer' />
-                    </>
-                ) : (
-                    <div className='w-full flex justify-end'>
-                        <Heart className='text-white w-4 h-4 cursor-pointer' />
-                    </div>
-                )}
+            <div
+                className={`h-[175px] rounded-t-lg p-4 flex items-start bg-cover bg-center
+                    ${schoolImg ? '' : 'my-gradient'}
+                    ${isTrending ? 'justify-between' : 'justify-end'}`}
+                style={schoolImg ? { backgroundImage: `url(${schoolImg})` } : {}}
+            >
+                {/* Trending Badge */}
+                <div
+                    className={`flex items-center gap-1 bg-[var(--orange-color)] text-white px-3 py-1 rounded-xl ${
+                        isTrending ? '' : 'hidden'
+                    }`}
+                >
+                    <TrendingUp className='w-4 h-4' />
+                    <h3 className='text-xs font-semibold'>Trending</h3>
+                </div>
+
+                {/* Heart Icon */}
+                <Heart
+                    onClick={() => setIsLiked(!isLiked)}
+                    className='text-white w-4 h-4 cursor-pointer'
+                    style={isLiked ? { fill: 'white' } : {}}
+                />
             </div>
+
             <div className='px-4 py-2 flex flex-col justify-center items-start gap-1'>
                 <div className='w-full flex flex-row justify-between items-center'>
                     <h1 className='text-md font-semibold text-[var(--color-foreground)]'>
