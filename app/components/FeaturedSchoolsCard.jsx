@@ -6,7 +6,7 @@ export default function FeaturedSchoolsCard({schoolName,typeSchool,location,numb
     rating,specialities,isTrending}) {
     return (
         <div className='flex flex-col rounded-lg transition-all 0.5s ease-in
-            hover:shadow-md hover:border-[var(--color-muted)] hover:cursor-pointer hover:scale-[1.02]'>
+            hover:shadow-md hover:border-[var(--color-muted)] hover:scale-[1.02]'>
             <div className='bg-[var(--purple-color)] h-[175px] rounded-t-lg p-4 flex items-start justify-between'>
                 {isTrending ? (
                     <>
